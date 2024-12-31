@@ -1,6 +1,6 @@
-## Lab0xFF Assemblipede
+## SnakeByte
 
-Lab0xFF Assemblipede is a 32-bit NASM assembly project designed to run in a Linux environment (e.g., WSL).
+SnakeByte is a 32-bit NASM assembly project designed to run in a Linux environment (e.g., WSL).
 
 ## Prerequisites
 
@@ -22,14 +22,14 @@ sudo apt install nasm gcc-multilib libncurses5-dev:i386 libc6:i386 patchelf
 ## Building the Program
 
 To Assemble:  
-nasm -f elf32 -o SnakeByte.o SnakeByte.asm
+nasm -f elf32 -o SnakeByte.o SnakeByte.asm  
 To Link:  
-ld -m elf_i386 --dynamic-linker /lib/ld-linux.so.2 -o SnakeByte SnakeByte.o -lncurses -lc
+ld -m elf_i386 --dynamic-linker /lib/ld-linux.so.2 -o SnakeByte SnakeByte.o -lncurses -lc  
 
 Run the Program with:
 ./SnakeByte [level].txt
 
 Troubleshooting "cannot execute: required file not found":
 Ensure the interpreter is set correctly:
-patchelf --set-interpreter /lib/ld-linux.so.2 Lab0xFF-Assemblipede
+patchelf --set-interpreter /lib/ld-linux.so.2 SnakeByte
 
