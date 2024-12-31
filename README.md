@@ -1,5 +1,7 @@
 ## SnakeByte
 
+[SCREENSHOTS]
+
 SnakeByte is a 32-bit NASM assembly project designed to run in a Linux environment (e.g., WSL).
 
 ## Prerequisites
@@ -26,10 +28,18 @@ nasm -f elf32 -o SnakeByte.o SnakeByte.asm
 To Link:  
 ld -m elf_i386 --dynamic-linker /lib/ld-linux.so.2 -o SnakeByte SnakeByte.o -lncurses -lc  
 
-Run the Program with:
-./SnakeByte [level].txt
-
 Troubleshooting "cannot execute: required file not found":
 Ensure the interpreter is set correctly:
 patchelf --set-interpreter /lib/ld-linux.so.2 SnakeByte
 
+## Level Selection
+
+Run the Program with:
+./SnakeByte levels/[levelname].txt
+* Replace [levelname].txt with the desired level file, such as lvl_001.txt
+
+## Instructions
+
+Controls:
+- Move with WASD
+- Pause with spacebar
